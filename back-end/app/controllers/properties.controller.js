@@ -12,6 +12,7 @@ exports.create = (req, res) => {
     // Create a Properties
     const properties = new Properties({
         Titre: req.body.Titre,
+        ProprioId: req.body.ProprioId,
         PetiteDescription: req.body.PetiteDescription,
         LongueDescription: req.body.LongueDescription,
         Pays: req.body.Pays,
@@ -28,6 +29,8 @@ exports.create = (req, res) => {
         MachineALaver: req.body.MachineALaver,
         Internet: req.body.Internet,
         AnimauxAdmis: req.body.AnimauxAdmis,
+        PrixNuit: parseInt(req.body.PrixNuit),
+        Assurance: req.body.Assurance
     });
 
     // Save Properties in the database

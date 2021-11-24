@@ -1,6 +1,7 @@
 module.exports = mongoose => {
     var schema = mongoose.Schema({
         Titre: String,
+        ProprioId: String,
         PetiteDescription: String,
         LongueDescription: String,
         Pays: String,
@@ -17,6 +18,8 @@ module.exports = mongoose => {
         MachineALaver: Boolean,
         Internet: Boolean,
         AnimauxAdmis: Boolean,
+        PrixNuit: Number,
+        Assurance: Boolean
     }, {
         versionKey: false,
         collection: "properties",

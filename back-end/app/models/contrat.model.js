@@ -1,9 +1,11 @@
 module.exports = mongoose => {
     var schema = mongoose.Schema({
         PropertyId: String,
-        UserID: String,
+        ProprioId: String,
+        LocataireId: String,
         DebutDate: Date,
         FinDate: Date,
+        Assurance: Boolean
     }, {
         versionKey: false,
         collection: "contrat",

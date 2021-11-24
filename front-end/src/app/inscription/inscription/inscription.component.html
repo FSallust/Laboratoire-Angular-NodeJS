@@ -1,0 +1,54 @@
+<body>
+    <div id="inscription">
+        <h1>INSCRIVEZ VOUS</h1>
+
+        <form [formGroup]="inscriptionForm">
+            <div appearance="outline">
+                <mat-label>Nom</mat-label>
+                <input matInput formControlName="Nom" id="Nom">
+                <control-messages [control]="inscriptionForm.get('Nom')"></control-messages>
+            </div>
+            <br>
+            <div appearance="outline">
+                <mat-label>Prénom</mat-label>
+                <input matInput formControlName="Prenom" id="Prenom">
+                <control-messages [control]="inscriptionForm.get('Prenom')"></control-messages>
+            </div>
+            <br>
+            <div appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="Email" id="Email" placeholder="Ex. tkd@example.com">
+                <control-messages [control]="inscriptionForm.get('Email')"></control-messages>
+            </div>
+            <br>
+            <div appearance="outline">
+                <mat-label>Pays</mat-label>
+                <select class="form-control" name="Pays" id="Pays" formControlName="Pays">
+                    <option value="" disabled selected>Select Country</option>
+                    <option *ngFor="let country of countriesList" [value]="country.name">{{country.name}}</option>
+               </select>
+            </div>
+            <br>
+            <div appearance="outline">
+                <mat-label>GSM</mat-label>
+                <input matInput formControlName="Telephone" id="Telephone">
+                <control-messages [control]="inscriptionForm.get('Telephone')"></control-messages>
+            </div>
+            <br>
+            <div appearance="outline">
+                <mat-label>Mot de passe</mat-label>
+                <input matInput type="Password" formControlName="Password" id="Password">
+                <control-messages [control]="inscriptionForm.get('Password')"></control-messages>
+            </div>
+            <br>
+            <!-- <mat-slide-toggle color="primary">Afficher le mot de passe</mat-slide-toggle>
+            <br> -->
+            <button mat-button type="submit" color="warn" [disabled]="!inscriptionForm.valid" (click)="register(inscriptionForm)">S'INSCRIRE</button>
+            <br>
+            <br>
+            <br>
+            <P>Vous avez déjà un compte ?</P>
+            <button mat-button color="primary" [routerLink]="'/connection'">CONNECTEZ VOUS</button>
+        </form>
+    </div>
+</body>

@@ -12,9 +12,11 @@ exports.create = (req, res) => {
     // Create a Contrat
     const contrat = new Contrat({
         PropertyId: req.body.PropertyId,
-        UserID: req.body.UserID,
+        ProprioId: req.body.ProprioId,
+        LocataireId: req.body.LocataireId,
         DebutDate: req.body.DebutDate,
         FinDate: req.body.FinDate,
+        Assurance: req.body.Assurance
     });
 
     // Save Contrat in the database
